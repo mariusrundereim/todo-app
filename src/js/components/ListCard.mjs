@@ -9,8 +9,11 @@ export default function ListCard(task, i) {
 
   listCard.append(
     taskText,
-    Button("X", "warning", () => {
+    Button("Remove", "warning", () => {
       lsRemove(i);
+      renderTodos();
+    }),
+    Button("Edit", "success", () => {
       renderTodos();
     })
   );
