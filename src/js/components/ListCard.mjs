@@ -1,6 +1,6 @@
 import Button from "./Button.mjs";
-// import lsremove
-// renderTodos
+import { lsRemove } from "../services/handlelocalestorage.mjs";
+import renderTodos from "../services/rendertodos.mjs";
 
 export default function ListCard(task, i) {
   const listCard = document.createElement("div");
@@ -10,8 +10,9 @@ export default function ListCard(task, i) {
   listCard.append(
     taskText,
     Button("X", "warning", () => {
-      // lsRemove(i)
-      // renderTodos
+      lsRemove(i);
+      renderTodos();
     })
   );
+  return listCard;
 }
